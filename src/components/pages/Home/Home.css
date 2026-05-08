@@ -8,6 +8,12 @@
     padding: 20px;
 }
 
+
+.navlink {
+    text-decoration: none;
+    color: black;
+}
+
 .filmCard {
     width: 270px;
     height: 400px;

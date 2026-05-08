@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "../../components/templates/Layout/Layout";
 import { Home } from "../../components/pages/Home/Home";
+import { OneFilm } from "../../components/pages/OneFilm/OneFilm";
 
 export const router = createBrowserRouter([
     {
@@ -10,6 +11,10 @@ export const router = createBrowserRouter([
             {
                 index : true,
                 element : <Home/>
+            },
+            {
+                path : "/:id",
+                element : <OneFilm />
             }
         ]
     }
