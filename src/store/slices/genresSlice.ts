@@ -1,11 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { genresAPI } from "../../api/generesApi";
 import type { PayloadAction } from "@reduxjs/toolkit";
-
-export type Genre = {
-    id: number;
-    name: string;
-}
+import type { Genre } from "../../shared/types/Types";
 
 type GenresSliceStateType = {
     genres: Genre[];

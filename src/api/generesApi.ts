@@ -1,5 +1,5 @@
 import { ConfigAPI } from "./configApi";
-import type { Genre } from "../store/slices/genresSlice";
+import type { Genre } from "../shared/types/Types";
 
 type getGenresResponseType = {
     genres: Genre[]
