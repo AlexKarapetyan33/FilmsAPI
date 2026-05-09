@@ -6,8 +6,12 @@ class FimlsAPI extends ConfigAPI {
     return  this.createBaseUrl().get<GetFilmsResponseType>(`/discover/movie?api_key=${this.apiKey}&language=en-US&page=${3}`)
    }
 
-   public async getOneFilm(id : any){
+   public async getOneFilm(id : string | undefined){
       return this.createBaseUrl().get(`/movie/${id}?api_key=${this.apiKey}&language=en-US`)
+   }
+
+   public async getSearchFilm(text : string){
+      return this.createBaseUrl().get(`/search/movie?api_key=${this.apiKey}&query=${text}`)
    }
 
 }
