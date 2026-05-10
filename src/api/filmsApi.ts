@@ -2,8 +2,8 @@ import { ConfigAPI } from "./configApi";
 import type { GetFilmsResponseType } from "../shared/types/Types";
 
 class FimlsAPI extends ConfigAPI {
-   public async getFilms(){
-    return  this.createBaseUrl().get<GetFilmsResponseType>(`/discover/movie?api_key=${this.apiKey}&language=en-US&page=${1}`)
+   public async getFilms(lang : string){
+    return  this.createBaseUrl().get<GetFilmsResponseType>(`/discover/movie?api_key=${this.apiKey}&language=${lang}&page=${1}`)
    }
 
    public async getOneFilm(id : string | undefined){

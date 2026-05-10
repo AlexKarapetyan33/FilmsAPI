@@ -7,13 +7,19 @@ import "./Home.css"
 
 const imgUrl : string = "https://image.tmdb.org/t/p/w500/"
 
+
 export const Home = () => {
 
+  const {lang} = useAppSelector((state) => state.langChangeData)
   const {results} = useAppSelector((state) => state.filmsData)
   const dispatch = useAppDispatch()
+
   useEffect(() => {
-    dispatch(getFilmsThunk())
-  }, [])
+    dispatch(getFilmsThunk(lang))
+  }, [lang])
+
+    console.log(lang);
+    
 
   return (
     <main className="homePage">

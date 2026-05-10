@@ -46,8 +46,8 @@ const filmsSlice = createSlice({
 })
 
 const getFilmsThunk = createAsyncThunk<GetFilmsResponseType>("getFilmsThunk", 
-    async () => {
-        const response = await filmsAPI.getFilms()
+    async (lang : any) => {
+        const response = await filmsAPI.getFilms(lang)
         return response.data
     }
 )

@@ -1,12 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import genresSlice from "../store/slices/genresSlice"
 import fimlsSlice from "../store/slices/filmsSlice"
-
+import langChangeSlice from "../store/slices/LangChangeSlice"
 
 const store = configureStore({
     reducer : {
         genresData : genresSlice,
-        filmsData : fimlsSlice
+        filmsData : fimlsSlice,
+        langChangeData : langChangeSlice
     }
 })
 

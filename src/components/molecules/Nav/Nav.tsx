@@ -1,8 +1,11 @@
 import { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import { getGenresThunk } from "../../../store/slices/genresSlice"
-import "./Nav.css"
 import { NavLink } from "react-router-dom"
+import { setLang } from "../../../store/slices/LangChangeSlice"
+import "./Nav.css"
+
+
 
 export const Nav = () => {
  const dispatch = useAppDispatch()
@@ -12,8 +15,12 @@ export const Nav = () => {
     dispatch(getGenresThunk())
   }, [])
 
+  
+
   return (
     <nav className="navBar">
+      <button onClick={() => dispatch(setLang("en-US"))}>EN</button>
+      <button onClick={() => dispatch(setLang("ru-RU"))}>RU</button>
         {
           genres?.map((genre) => (
             <NavLink to={`/genre/${genre.id}`} key={genre.id}><button>{genre.name}</button></NavLink>
