@@ -8,7 +8,8 @@ type FilmsSliceStateType = {
     total_pages : number
     total_results : number
     result : GetOneFilmResponseType | null
-    searchResults : GetSearchResponseType[] 
+    searchResults : GetSearchResponseType[]
+    getGenresFilmResult : any
 }
 
 const initialState : FilmsSliceStateType = {
@@ -17,7 +18,8 @@ const initialState : FilmsSliceStateType = {
     total_pages : 0,
     total_results : 0,
     result : null,
-    searchResults : []
+    searchResults : [],
+    getGenresFilmResult : null
 }
 
 
@@ -36,6 +38,9 @@ const filmsSlice = createSlice({
         })
         builder.addCase(getSearchFilmThunk.fulfilled, (state, action) => {
             state.searchResults = action.payload.results
+        })
+        builder.addCase(getGenresFilmThunk.fulfilled, (state, action) => {
+            state.getGenresFilmResult = action.payload.results
         })
     },
 })
@@ -61,5 +66,13 @@ const getSearchFilmThunk = createAsyncThunk("getSearchFilmThunk",
     }
 )
 
-export {getFilmsThunk, getOneFilmThunk, getSearchFilmThunk}
+const getGenresFilmThunk = createAsyncThunk("getGenresFilmThunk", 
+    async (genreId : any) => {
+        const response = await filmsAPI.getGenresFilm(genreId)
+        return response.data
+    }
+)
+
+
+export {getFilmsThunk, getOneFilmThunk, getSearchFilmThunk, getGenresFilmThunk}
 export default filmsSlice.reducer

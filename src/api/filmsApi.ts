@@ -3,7 +3,7 @@ import type { GetFilmsResponseType } from "../shared/types/Types";
 
 class FimlsAPI extends ConfigAPI {
    public async getFilms(){
-    return  this.createBaseUrl().get<GetFilmsResponseType>(`/discover/movie?api_key=${this.apiKey}&language=en-US&page=${3}`)
+    return  this.createBaseUrl().get<GetFilmsResponseType>(`/discover/movie?api_key=${this.apiKey}&language=en-US&page=${1}`)
    }
 
    public async getOneFilm(id : string | undefined){
@@ -12,6 +12,10 @@ class FimlsAPI extends ConfigAPI {
 
    public async getSearchFilm(text : string){
       return this.createBaseUrl().get(`/search/movie?api_key=${this.apiKey}&query=${text}`)
+   }
+
+   public async getGenresFilm(genreId : any){
+      return this.createBaseUrl().get(`/discover/movie?api_key=${this.apiKey}&language=en-US&with_genres=${genreId}&page=${1}`)
    }
 
 }

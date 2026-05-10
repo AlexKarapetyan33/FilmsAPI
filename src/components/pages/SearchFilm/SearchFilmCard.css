@@ -1,7 +1,26 @@
 .searchFilmCard {
+    width: 270px;
+    height: 400px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
     &>a>img{
-        width: 200px;
-        height: 300px;
-        padding-top: 20px;
+        width: 240px;
+        height: 320px;
+        border-radius: 10px;
     }
+}
+
+.searchFilmContainer{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }

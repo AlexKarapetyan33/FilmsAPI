@@ -16,11 +16,11 @@ export const Home = () => {
   }, [])
 
   return (
-    <div className="homePage">
+    <main className="homePage">
       {
         results?.map((result) => {
           return (
-            <NavLink to={`/${result.id}`} className={"navlink"}>
+            <NavLink to={`/${result.id}`} className={"navlink"} key={result.id}>
               <div className="filmCard">
               <img src={imgUrl + result.poster_path} alt="" />
               <p>Release Date {result.release_date}</p>
@@ -30,6 +30,6 @@ export const Home = () => {
           )
         })
       }
-    </div>
+    </main>
   )
 }

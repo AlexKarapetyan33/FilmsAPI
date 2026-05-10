@@ -19,17 +19,17 @@ export const SearchFilm = () => {
   }, [])
   
   return (
-    <>
+    <div className="searchFilmContainer">
       {
         searchResults?.map((searchResult) => {
           return (
-              <div className="searchFilmCard">
+              <div className="searchFilmCard" key={searchResult.id}>
                 <h1>{searchResult.title}</h1>
                 <NavLink to={`/${searchResult.id}`}><img src={imgUrl + searchResult.poster_path} alt="" /></NavLink>
               </div>
           )
         })
       }
-    </>
+    </div>
   )
 }

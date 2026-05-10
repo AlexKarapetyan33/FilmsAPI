@@ -26,6 +26,7 @@ export const OneFilm = () => {
         <span><b>Origin Country : </b>{result?.origin_country}</span>
         <span><b>Original Language : </b>{result?.original_language}</span>
         <span><b>Original Title : </b>{result?.original_title}</span>
+        <span><b>Relase Date : </b>{result?.release_date}</span>
       </div>
       <div className="cardInfoBlock2">
         <p>{result?.overview}</p>
